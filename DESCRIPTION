@@ -1,0 +1,33 @@
+Package: TMSBrainApp
+Type: Package
+Title: A Shiny Web Interface for Bayesian Spatial Statistical Analysis of TMS Brain Mapping Data
+Version: 0.1.0
+Date: 2021-08-11
+Author: Osafu Egbon, Diego Nascimento, Onno van der Groen, Oilson Gonzzato, Francisco Louzada and Dylan Edwards 
+Maintainer: Osafu Egbon <osafuaugustine.egbon@usp.br>
+Description: Creates a user interface for analysing TMS brain mapping data.
+License: GPL-2
+Encoding: UTF-8
+Depends: 
+ shiny,
+ readxl,
+  shinyBS,
+  shinyWidgets,
+  shinydashboard,
+  shinyalert,
+  tidyverse,
+  plotly,
+  colorRamps,
+  lme4,
+  lmerTest,
+  INLA,
+  foreach,
+  sp,
+  splancs,
+  rgdal,
+  geosphere,
+  igraph,
+  rmarkdown
+Suggests:
+  knitr
+RoxygenNote: 7.1.1
