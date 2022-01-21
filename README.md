@@ -1,2 +1,2 @@
 # TMSBrainApp_R_Package
-TMSBrainApp R Pacakge
+TMSBrainApp, an R Package for TMS brain mapping adopting a Bayesian technique.
