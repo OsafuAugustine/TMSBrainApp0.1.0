@@ -815,7 +815,7 @@ TMSapp.run <- function(...){
                     data=inla.stack.data(B.stack.est, spde=B.spde),
                     family="gaussian",
                     control.predictor=list(A=inla.stack.A(B.stack.est), compute=TRUE),
-                    control.compute=list(cpo=TRUE, dic=TRUE),
+                    control.compute=list(cpo=TRUE, dic=TRUE,return.marginals.predictor=TRUE),
                     verbose = T)
       updateProgress(detail = '\n Calculation of the SPDE model finished')
       updateProgress(detail = '\n Organizing results')
@@ -878,7 +878,7 @@ TMSapp.run <- function(...){
       inla.write.graph(adj(), filename = "graph.graph")
       output <- inla(formula = formula,
                      control.predictor = list(compute = TRUE),
-                     control.compute=list(cpo=TRUE, dic=TRUE),
+                     control.compute=list(cpo=TRUE, dic=TRUE,return.marginals.predictor=TRUE),
                      data = testq) # Default non-informative priors
       #
       updateProgress(detail = '\n Calculation of the ICAR model finished')
@@ -951,7 +951,7 @@ TMSapp.run <- function(...){
       inla.write.graph(adj(), filename = "graph.graph")
       output <- inla(formula = formula,
                      control.predictor = list(compute = TRUE),
-                     control.compute=list(cpo=TRUE, dic=TRUE),
+                     control.compute=list(cpo=TRUE, dic=TRUE,return.marginals.predictor=TRUE),
                      data = testq) # Default non-informative priors
       #
       updateProgress(detail = '\n Calculation of the ICAR model finished')
@@ -1028,7 +1028,7 @@ TMSapp.run <- function(...){
       inla.write.graph(adj(), filename = "graph.graph")
       output <- inla(formula = formula,
                      control.predictor = list(compute = TRUE),
-                     control.compute=list(cpo=TRUE, dic=TRUE),
+                     control.compute=list(cpo=TRUE, dic=TRUE,return.marginals.predictor=TRUE),
                      data = testq) # Default non-informative priors
       #
       updateProgress(detail = '\n Calculation of the BYM model finished')
