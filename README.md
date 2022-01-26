@@ -11,9 +11,12 @@ Prerequisites
 - Manually install R-INLA from its repository. (https://www.r-inla.org/download-install).  
 
 Step 1. On R interface, install "devtools" package from CRAN repository.  
-	\hspace{2cm}	R > install.packages("devtools")  
+```
+		R > install.packages("devtools")  
+		
+```
 Step 2. Intall TMSBrainApp.  
-	\hspace{2cm}	R > install_github("OsafuAugustine/TMSBrainApp0.1.0")  
+		R > install_github("OsafuAugustine/TMSBrainApp0.1.0")  
 Step 3. To execute the TMSBrainApp interface;  
-	\hspace{2cm}	R > library(TMSBrainApp)  
-	\hspace{2cm}	R > TMSapp.run()  
+		R > library(TMSBrainApp)  
+		R > TMSapp.run()  
