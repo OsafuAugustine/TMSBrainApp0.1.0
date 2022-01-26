@@ -1,5 +1,5 @@
 ## TMSBrainApp
-TMSBrainApp is an R Package for TMS brain mapping, adopting a Bayesian spatial statistical technique.  
+TMSBrainApp is an R Package for TMS brain mapping, adopting a Bayesian spatial statistical technique. The package houses a shiny user interface, where one could perform Brain mapping in R without writing codes.  
 
 Please, follow the instructions on how to install the package on the R interface.
 
