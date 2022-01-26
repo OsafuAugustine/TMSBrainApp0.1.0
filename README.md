@@ -25,3 +25,5 @@ Step 3. To execute the TMSBrainApp interface;
 ```
 
 Navigate through the interface by clicking on the appropriate tabs.  A sample of TMS Brain data is available for practice.
+
+One can as well choose to work on a web browser rather than the R shiny interface.  To do this: on the R shiny interface, cick on "Open in Browser".
