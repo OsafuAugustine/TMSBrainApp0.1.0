@@ -7,7 +7,7 @@ Please, follow the instructions on how to install the package on the R interface
 Required tools
 
 - Ensure that your machine has R (>=3.5.0) installed. Otherwise, download and install from https://cran.r-project.org/.  
-- Ensure that "Rtools" is installed. Otherwise, download from https://cran.r-project.org/bin/windows/Rtools/rtools40.html.  
+- For Windows users, please ensure that "Rtools" is installed. Otherwise, download from https://cran.r-project.org/bin/windows/Rtools/rtools40.html.  
 - Manually install R-INLA (version 21.11.22 or more recent) from its repository. (https://www.r-inla.org/download-install).  
 
 Step 1. On R interface, install "devtools" package from CRAN repository.  
