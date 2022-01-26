@@ -13,10 +13,13 @@ Prerequisites
 Step 1. On R interface, install "devtools" package from CRAN repository.  
 ```
 		R > install.packages("devtools")  
-		
 ```
 Step 2. Intall TMSBrainApp.  
+```
 		R > install_github("OsafuAugustine/TMSBrainApp0.1.0")  
+```
 Step 3. To execute the TMSBrainApp interface;  
+```
 		R > library(TMSBrainApp)  
 		R > TMSapp.run()  
+```
