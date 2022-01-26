@@ -3,7 +3,7 @@ TMSBrainApp is an R Package for TMS brain mapping, adopting a Bayesian spatial s
 
 Please, follow the instructions on how to install the package on the R interface.
 
-## How to install TMSBrainApp on R
+### How to install TMSBrainApp on R
 Prerequisites  
 
 - Ensure that your machine has R (>=3.5.0) installed. Otherwise, download and install from https://cran.r-project.org/.  
