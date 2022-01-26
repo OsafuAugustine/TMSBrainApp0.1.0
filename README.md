@@ -23,3 +23,5 @@ Step 3. To execute the TMSBrainApp interface;
 		R > library(TMSBrainApp)  
 		R > TMSapp.run()  
 ```
+
+Navigate through the interface by clicking on the appropriate tabs.  A sample of TMS Brain data is available for practice.
