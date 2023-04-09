@@ -60,9 +60,8 @@ TMSapp.run <- function(...){
                 width = '100%'
               )
             ),
-            hr(),
             column(
-              width = 6,
+              width = 12,
               style = 'padding-left: 0px; padding-right: 10px;',
               selectInput(
                 inputId = 'SummaryResponse',
@@ -71,45 +70,8 @@ TMSapp.run <- function(...){
                 selected = 'Range'
               )
             ),
-            column(
-              width = 6,
-              style = 'padding-left: 10px; padding-right: 0px;',
-              selectInput(
-                inputId = 'Model',
-                label = 'Spatial Model',
-                choices = list('SPDE','ICAR','BYM','LEROUX'),
-                selected = 'SPDE'
-              )
-            ),
-            uiOutput('ParModels'),
-            fluidRow(),
-            hr(),
-            fluidRow(),
-            # column(
-            #     width = 12,
-            #     div(style = "display: inline-block; margin-left: 20px; margin-right: 20px; vertical-align: -20px;",
-            #         prettyCheckbox(
-            #             inputId = 'Rep1',
-            #             label = 'Rep 1',
-            #             value = TRUE,
-            #             width = '100%',
-            #             icon = icon("check"),
-            #             bigger=T,
-            #             status = "primary",
-            #             inline = F
-            #         )
-            #     ),
-            #     div(style = "display: inline-block;",
-            #         sliderInput(
-            #             inputId = 'Rep',
-            #             label = 'Repetition',
-            #             min = 1,
-            #             max = 10,
-            #             value = 1,
-            #             step = 1
-            #         )
-            #     )
-            # ),
+            ##########
+            fluidRow(
             column(
               width = 3,
               style = 'padding-left: 0px; padding-right: 10px;',
@@ -139,9 +101,61 @@ TMSapp.run <- function(...){
                 step = 1
               )
               # )
+            )),
+
+            fluidRow(
+            column(
+              width = 6,
+              style = 'padding-left: 10px; padding-right: 0px;',
+              selectInput(
+                inputId = 'dataModel',
+                label = 'Response Model',
+                choices = list('gaussian','gamma','exponential','lognormal','weibull'),
+                selected = 'gaussian'
+              )
             ),
+            column(
+              width = 6,
+              style = 'padding-left: 10px; padding-right: 0px;',
+              selectInput(
+                inputId = 'Model',
+                label = 'Spatial Model',
+                choices = list('SPDE','ICAR','BYM','LEROUX'),
+                selected = 'SPDE'
+              )
+            )),
+            uiOutput('ParModels'),
             fluidRow(),
             hr(),
+            fluidRow(),
+            # column(
+            #     width = 12,
+            #     div(style = "display: inline-block; margin-left: 20px; margin-right: 20px; vertical-align: -20px;",
+            #         prettyCheckbox(
+            #             inputId = 'Rep1',
+            #             label = 'Rep 1',
+            #             value = TRUE,
+            #             width = '100%',
+            #             icon = icon("check"),
+            #             bigger=T,
+            #             status = "primary",
+            #             inline = F
+            #         )
+            #     ),
+            #     div(style = "display: inline-block;",
+            #         sliderInput(
+            #             inputId = 'Rep',
+            #             label = 'Repetition',
+            #             min = 1,
+            #             max = 10,
+            #             value = 1,
+            #             step = 1
+            #         )
+            #     )
+            # ),
+
+            fluidRow(),
+               hr(),
             fluidRow(),
             actionButton(
               inputId = 'Calculate',
@@ -813,7 +827,7 @@ TMSapp.run <- function(...){
       #
       output = inla(formula,
                     data=inla.stack.data(B.stack.est, spde=B.spde),
-                    family="gaussian",
+                    family=input$dataModel,
                     control.predictor=list(A=inla.stack.A(B.stack.est), compute=TRUE),
                     control.compute=list(cpo=TRUE, dic=TRUE,return.marginals.predictor=TRUE),
                     verbose = T)
@@ -877,6 +891,7 @@ TMSapp.run <- function(...){
       #
       inla.write.graph(adj(), filename = "graph.graph")
       output <- inla(formula = formula,
+                     family=input$dataModel,
                      control.predictor = list(compute = TRUE),
                      control.compute=list(cpo=TRUE, dic=TRUE,return.marginals.predictor=TRUE),
                      data = testq) # Default non-informative priors
@@ -950,6 +965,7 @@ TMSapp.run <- function(...){
       #
       inla.write.graph(adj(), filename = "graph.graph")
       output <- inla(formula = formula,
+                     family=input$dataModel,
                      control.predictor = list(compute = TRUE),
                      control.compute=list(cpo=TRUE, dic=TRUE,return.marginals.predictor=TRUE),
                      data = testq) # Default non-informative priors
@@ -1027,6 +1043,7 @@ TMSapp.run <- function(...){
       #
       inla.write.graph(adj(), filename = "graph.graph")
       output <- inla(formula = formula,
+                     family=input$dataModel,
                      control.predictor = list(compute = TRUE),
                      control.compute=list(cpo=TRUE, dic=TRUE,return.marginals.predictor=TRUE),
                      data = testq) # Default non-informative priors
